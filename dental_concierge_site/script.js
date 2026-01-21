@@ -81,4 +81,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Clinic Gallery Loader
+    const galleryContainer = document.getElementById('clinic-gallery');
+    if (galleryContainer) {
+        const maxPhotos = 20; // Maximum number of photos to check
+        
+        for (let i = 1; i <= maxPhotos; i++) {
+            const img = document.createElement('img');
+            // Filename format: clinic_1.jpg, clinic_2.jpg, ...
+            img.src = `images/clinic_${i}.jpg`;
+            img.alt = `Clinic Environment ${i}`;
+            
+            // Allow clicking to view full image
+            img.onclick = function() { window.open(this.src); };
+            
+            // If image fails to load (doesn't exist), remove it from DOM
+            img.onerror = function() {
+                this.remove();
+            };
+            
+            galleryContainer.appendChild(img);
+        }
+    }
 });

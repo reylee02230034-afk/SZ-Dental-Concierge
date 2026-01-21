@@ -388,12 +388,13 @@ img {
     cursor: pointer;
 }
 
-.dentist-photo-wrapper img {
+.dentist-photo-wrapper img,
+.city-photo-wrapper img {
     width: 100%;
     height: auto; /* Maintains aspect ratio */
     border-radius: var(--radius);
     box-shadow: var(--shadow-md);
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .cert-item img:hover {
@@ -636,6 +637,29 @@ img {
     text-align: center;
     font-size: 0.9rem;
     color: #aaa;
+}
+
+/* Clinic Environment Gallery */
+.clinic-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.clinic-gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.clinic-gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
 }
 
 /* Responsive Design */
