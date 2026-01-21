@@ -44,15 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Simple client-side validation check (HTML5 already handles basic validation)
             if (name && email) {
-                // Simulate API call
+                // Prepare email content
+                const subject = `New Consultation Request from ${name}`;
+                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ACountry: ${document.getElementById('country').value}%0D%0AMessage: ${document.getElementById('message').value}`;
+                
+                // Open default mail client
+                window.location.href = `mailto:282537979@qq.com?subject=${subject}&body=${body}`;
+
                 const btn = form.querySelector('button[type="submit"]');
                 const originalText = btn.innerText;
                 
-                btn.innerText = 'Sending...';
+                btn.innerText = 'Opening Email Client...';
                 btn.disabled = true;
                 
                 setTimeout(() => {
-                    alert(`Thank you, ${name}! Your request has been received. Our concierge team will contact you at ${email} shortly.`);
+                    alert(`Thank you, ${name}! Your email client should have opened. If not, please email us directly at 282537979@qq.com`);
                     form.reset();
                     btn.innerText = originalText;
                     btn.disabled = false;

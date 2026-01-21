@@ -532,14 +532,21 @@ img {
     padding: 50px;
     border-radius: var(--radius);
     box-shadow: var(--shadow-md);
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .contact-info {
     flex: 1;
+    min-width: 300px; /* Ensure minimum width for readability */
 }
 
 .contact-info h2 {
     margin-bottom: 1.5rem;
+    color: var(--primary-dark); /* Ensure high contrast */
+}
+
+.contact-info p {
+    color: var(--text-color); /* Ensure high contrast */
 }
 
 .contact-details {
@@ -551,19 +558,23 @@ img {
     font-size: 1.1rem;
     display: flex;
     align-items: center;
+    color: var(--text-color); /* Ensure text is readable */
 }
 
 .contact-details i {
     width: 40px;
     color: var(--primary-color);
     font-size: 1.5rem;
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .contact-form {
     flex: 1;
+    min-width: 300px; /* Ensure minimum width */
     background: var(--bg-light);
     padding: 30px;
     border-radius: var(--radius);
+    border: 1px solid var(--border-color); /* Add border for definition */
 }
 
 .form-group {
@@ -574,6 +585,7 @@ img {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
+    color: var(--primary-dark);
 }
 
 .form-group input,
